@@ -1,0 +1,9 @@
+{
+  "serviceName": "Internal Access",
+  "useServiceNavigation": true,
+  "plugins": {
+    "govuk-frontend": {
+      "rebrand": true
+    }
+  }
+}

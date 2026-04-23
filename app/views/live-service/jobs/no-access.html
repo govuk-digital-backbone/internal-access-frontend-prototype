@@ -1,0 +1,41 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukHeader({
+    serviceName: "Internal Access"
+  }) }}
+  {{ govukServiceNavigation({
+    navigation: [
+      { href: "#", text: "Search jobs", active: true },
+      { href: "/live-service/sign-in", text: "Sign in" }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Civil Service job search</h1>
+    
+    <p class="govuk-body">Find jobs in the Civil Service and central government organisations.</p>
+
+    <div class="app-search-container">
+      <div class="govuk-grid-column-full">
+        {{ govukInput({
+          label: { text: "What", classes: "govuk-label--m" },
+          hint: { text: "Enter job title, skill or keywords" },
+          id: "keywords",
+          name: "keywords"
+        }) }}
+      
+        {{ govukButton({
+          text: "Search for jobs",
+          href: "#",
+          classes: "govuk-!-margin-top-4"
+        }) }}
+      </div>
+    </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+
+// Custom display for the email address
+.app-email-display {
+  text-decoration: underline dotted;
+  text-underline-offset: 4px;
+}
+
+
+// Custom search container
+.app-search-container {
+  background-color: #f3f2f1; // govuk-colour("light-grey")
+  padding: 15px;
+  margin-bottom: 30px;
+  overflow: hidden; // Ensures the floated grid columns stay inside the container
+}

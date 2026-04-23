@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <header>
+    {{govukHeader()}}
+    {{ govukPhaseBanner({
+      tag: {
+        text: "Private Beta"
+      },
+      html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+  </header>
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Internal Access",
+        href: "#"
+      },
+      {
+        text: "Sign Out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">
+        Sign out
+      </h1>
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+              You've signed out of Civil Service Jobs
+          </strong>
+      </div>
+
+
+      <div class="govuk-button-group">
+        <a href="/live-service/jobs/no-access" type="submit" class="govuk-button" data-module="govuk-button">
+          Back to Civil Service Jobs
+        </a>
+        <a href="/live-service/jobs/no-access" type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button">
+          Sign out of Internal Access
+        </a>
+      </div>
+
+    </div>
+
+    
+
+  </div>
+
+{% endblock %}

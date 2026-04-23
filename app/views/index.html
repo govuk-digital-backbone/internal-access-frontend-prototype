@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<main class="govuk-main-wrapper" id="main-content">
+   <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Internal Access Service
+    </h1>
+
+    <p class="govuk-body govuk-!-margin-bottom-8">This prototype is used to design and test the Internal Access login and authentication flows.</p>
+    
+    
+    <section class="app-section govuk-!-">
+      <h2 class="govuk-heading-m">Core service flow</h2>
+      <p class="govuk-body">The standard "happy path" for users signing into the service.</p>
+      
+
+      
+      {{ govukButton({
+        text: "Launch core flow",
+        href: "/live-service/jobs/no-access",
+        isStartButton: false
+      }) }}
+    </section>  
+
+<!-- COPY THIS TEMPLATE FOR FUTURE ITERATIONS
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <section class="app-section">
+      <h2 class="govuk-heading-m">Experiments and iterations</h2>
+      <p class="govuk-body">Branching flows used to test specific ideas or user research hypotheses.</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-link" href="#">Iteration name</a>
+          <p class="govuk-hint">Alternative to the email one-time code flow.</p>
+        </li>
+      
+        <li>
+          <a class="govuk-link" href="#">Iteration name</a>
+          <p class="govuk-hint">Brief summary</p>
+        </li>
+      </ul>
+    </section>
+
+    -->
+
+  </div>
+
+  
+  
+  <div class="govuk-grid-column-one-third">
+    <aside class="app-related-items">
+      <h2 class="govuk-heading-s" id="support-title">Project resources</h2>
+      <nav role="navigation" aria-labelledby="support-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a class="govuk-link" href="https://github.com/your-repo">GitHub Repository</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="https://app.mural.co/t/octo5699/m/gdsservicetransformation7597/1768907305123/af5842fd9ca647b3786b8a9b1e0ab6b5166700e0?sender=u8e6f444cdad7dd7658694666" target="_blank">User Research Notes</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+</div>       
+  
+
+</main>
+
+
+
+{% endblock %}
