@@ -1,17 +1,20 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+  GOV.UK {{ serviceName }} 
 {% endblock %}
 
 {% block header %}
   <header>
-    {{govukHeader()}}
+    {{ govukHeader({
+      serviceName: "Internal Access",
+      serviceUrl: "/"
+    }) }}
     {{ govukPhaseBanner({
       tag: {
         text: "Private Beta"
       },
-      html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+      html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
     }) }}
   </header>
 {% endblock %}
@@ -21,7 +24,7 @@
     items: [
       {
         text: "Internal Access",
-        href: "#"
+        href: "/live-service/internal-access"
       },
       {
         text: "Sign In"

@@ -1,13 +1,18 @@
 {% extends "layouts/main.html" %}
 
+{% block pageTitle %}
+  Civil Service job search - Civil Service Jobs - GOV.UK
+{% endblock %}
+
 {% block header %}
   {{ govukHeader({
     serviceName: "Internal Access"
   }) }}
   {{ govukServiceNavigation({
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
     navigation: [
-      { href: "#", text: "Search jobs", active: true },
-      { href: "/live-service/sign-in", text: "Sign in" }
+      { href: "/live-service/sign-in", text: "Sign in to your account" }
     ]
   }) }}
 {% endblock %}
@@ -16,26 +21,39 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl">Civil Service job search</h1>
+    <h1 class="govuk-heading-l">Civil Service job search</h1>
     
     <p class="govuk-body">Find jobs in the Civil Service and central government organisations.</p>
 
+    
     <div class="app-search-container">
-      <div class="govuk-grid-column-full">
-        {{ govukInput({
+      <div class="govuk-grid-column-one-half">  
+      {{ govukInput({
           label: { text: "What", classes: "govuk-label--m" },
           hint: { text: "Enter job title, skill or keywords" },
           id: "keywords",
           name: "keywords"
         }) }}
+      </div>
+
+      <div class="govuk-grid-column-one-half">  
+      {{ govukInput({
+          label: { text: "Where", classes: "govuk-label--m" },
+          hint: { text: "Enter a postcode, town or region" },
+          id: "keywords",
+          name: "keywords"
+        }) }}
+      </div>
       
+      <div class="govuk-grid-column-one-half">
         {{ govukButton({
           text: "Search for jobs",
           href: "#",
-          classes: "govuk-!-margin-top-4"
+          classes: "govuk-!-margin-bottom-2"
         }) }}
-      </div>
+        </div>
     </div>
+    
     </div>
 </div>
 {% endblock %}
