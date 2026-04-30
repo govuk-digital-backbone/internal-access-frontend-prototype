@@ -1,0 +1,21 @@
+name: Deploy to Lightsail
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: 13.42.68.231
+          username: admin
+          key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+          script: |
+            cd ~/internal-access-frontend-prototype
+            git pull origin main
+            npm install
+            pm2 restart prototype || pm2 start "npm start" --name prototype
