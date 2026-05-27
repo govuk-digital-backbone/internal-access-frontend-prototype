@@ -1,0 +1,85 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+GOV.UK {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+<header>
+  {{ govukHeader({
+  serviceName: "Internal Access",
+  serviceUrl: "/"
+  }) }}
+  {{ govukPhaseBanner({
+  tag: {
+  text: "Private Beta"
+  },
+  html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+</header>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if data['error'] %}
+    {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+    {
+    text: "Enter your email address",
+    href: "#email-address"
+    }
+    ]
+    }) }}
+    {% endif %}
+
+    <form action="/authentication/iteration/ucd-review/start-check" method="post">
+      {{ govukInput({
+      label: {
+      text: "Enter your email address",
+      classes: "govuk-label--l",
+      isPageHeading: true
+      },
+      hint: {
+      text: "We’ll use this to verify your email address"
+      },
+      id: "email-address",
+      name: "emailAddress",
+      errorMessage: {
+      text: "Enter your email address"
+      } if data['error'],
+      value: data['emailAddress']
+      }) }}
+
+      <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+      <label class="govuk-label govuk-checkboxes__label" for="waste">
+        Remember me
+      </label>
+    </div>
+
+    <div class="govuk-button-group">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Send one-time code
+      </button>
+    </div>
+
+    </form>
+
+    
+
+
+
+
+
+  </div>
+
+
+
+</div>
+
+{% endblock %}

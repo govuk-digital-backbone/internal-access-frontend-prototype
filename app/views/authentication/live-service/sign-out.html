@@ -16,20 +16,6 @@
   </header>
 {% endblock %}
 
-{% block containerStart %}
-  {{ govukBreadcrumbs({
-    items: [
-      {
-        text: "Internal Access",
-        href: "/live-service/internal-access"
-      },
-      {
-        text: "Sign Out"
-      }
-    ]
-  }) }}
-{% endblock %}
-
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -49,10 +35,10 @@
 
 
       <div class="govuk-button-group">
-        <a href="/live-service/jobs/no-access" type="submit" class="govuk-button" data-module="govuk-button">
+        <a href="/authentication/live-service/jobs/no-access" type="submit" class="govuk-button" data-module="govuk-button">
           Back to Civil Service Jobs
         </a>
-        <a href="/live-service/jobs/no-access" type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button">
+        <a href="/authentication/live-service/jobs/no-access" type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button">
           Sign out of Internal Access
         </a>
       </div>

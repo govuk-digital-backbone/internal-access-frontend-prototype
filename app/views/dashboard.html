@@ -1,0 +1,105 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Authentication" %}
+
+{% block content %}
+
+<main class="govuk-main-wrapper" id="main-content">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Use the dashboard
+      </h1>
+
+      <!-- UNCOMMENT WHEN LIVE
+      <p class="govuk-body govuk-!-margin-bottom-8">Use this prototype to view and manage access after signing in.</p>
+      -->
+
+      <p class="govuk-body govuk-!-margin-bottom-8">There is no main dashboard prototype yet. Use the versions below to explore work in progress designs.</p>
+
+      
+
+      <!-- UNCOMMENT THIS WHEN LIVE SERVICE EXISTS
+      <a href="/authentication/live-service/jobs/no-access" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button" target:="_blank" rel="noreferrer noopener">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
+          viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+        </svg>
+      </a>
+
+      -->
+
+
+      <!-- COPY THIS TEMPLATE FOR FUTURE ITERATIONS
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <section class="app-section">
+      <h2 class="govuk-heading-m">Experiments and iterations</h2>
+      <p class="govuk-body">Branching flows used to test specific ideas or user research hypotheses.</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-link" href="#">Iteration name</a>
+          <p class="govuk-hint">Alternative to the email one-time code flow.</p>
+        </li>
+      
+        <li>
+          <a class="govuk-link" href="#">Iteration name</a>
+          <p class="govuk-hint">Brief summary</p>
+        </li>
+      </ul>
+    </section>
+    
+
+    -->
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <section class="app-section">
+        <h2 class="govuk-heading-m">Experiments and iterations</h2>
+        <p class="govuk-body">Branching flows used to test specific ideas or user research hypotheses.</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a class="govuk-link" href="/dashboard/branch/manage-access-services/apps">Self-service dashboard (early concept)</a>
+            <p class="govuk-hint">Explore a version of the dashboard where you can manage access to existing services and create new clients</p>
+          </li>
+
+          
+        </ul>
+      </section>
+
+    </div>
+
+
+
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items">
+        <h2 class="govuk-heading-s" id="support-title">Project resources</h2>
+        <nav role="navigation" aria-labelledby="support-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a class="govuk-link"
+                href="https://github.com/govuk-digital-backbone/internal-access-frontend-prototype">GitHub
+                Repository</a>
+            </li>
+            <li>
+              <a class="govuk-link"
+                href="https://app.mural.co/t/octo5699/m/gdsservicetransformation7597/1768907305123/af5842fd9ca647b3786b8a9b1e0ab6b5166700e0?sender=u8e6f444cdad7dd7658694666"
+                target="_blank">User Research Notes</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+  </div>
+
+
+</main>
+
+
+
+{% endblock %}

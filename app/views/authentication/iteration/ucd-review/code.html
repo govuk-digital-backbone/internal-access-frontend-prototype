@@ -1,0 +1,83 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+GOV.UK {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+<header>
+  {{govukHeader()}}
+  {{ govukPhaseBanner({
+  tag: {
+  text: "Private Beta"
+  },
+  html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+</header>
+{% endblock %}
+
+{% block content %}
+
+<!-- ERROR MESSAGE SUMMARY TEMPLATE - UNCOMMENT TO USE
+{% if data['codeError'] %}
+  {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+      {
+        text: "Enter the one-time code",
+        href: "#event-name"
+      }
+    ]
+  }) }}
+{% endif %}
+-->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Enter your one-time code
+    </h1>
+
+    <p class="govuk-body">
+      We have sent a one-time code to
+      <span class="app-email-display">
+        {{ data['emailAddress'] | default('email@address.gov.uk') }}
+      </span>
+    </p>
+
+
+    <form action="/authentication/iteration/ucd-review/code-check" method="post">
+
+      {{ govukInput({
+      label: {
+      text: "Enter one-time code",
+      classes: "p",
+      isPageHeading: false
+      },
+      hint: {
+      text: "For example, 123-456-789"
+      },
+      id: "event-name",
+      name: "eventName",
+      classes: "govuk-input--width-10",
+      errorMessage: {
+      text: "That appears to be wrong, please try again"
+      } if data['codeError']
+      }) }}
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Sign in
+        </button>
+      </div>
+
+    </form>
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link">Request a new code</a>
+    </p>
+
+  </div>
+
+  {% endblock %}

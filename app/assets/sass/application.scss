@@ -22,3 +22,45 @@
 }
 */
 
+// Text alignment utility for buttons/headers inside columns
+@media (min-width: 40.0625em) {
+  .govuk-\!-text-align-right {
+    text-align: right !important;
+  }
+}
+
+// Adjust checkbox position inside standard table layouts 
+.govuk-table__cell .govuk-checkboxes--small .govuk-checkboxes__item {
+  margin-top: -5px;
+  min-height: auto;
+}
+
+// Fix the Batch Action Header alignment and wrapping
+#batch-control-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px; // Increases padding space between count, clear link, and button
+  flex-wrap: nowrap; // Prevents items from splitting into two rows
+
+  span, a, button {
+    white-space: nowrap; // Guarantees text strings stay on a single line
+  }
+}
+
+// Standardize vertical alignment across the entire table
+.govuk-table {
+  .govuk-table__header,
+  .govuk-table__cell {
+    vertical-align: middle !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+
+  // Precision alignment tweak for row checkboxes to sit perfectly centered
+  .govuk-checkboxes__item {
+    margin-top: 0 !important; 
+    display: flex;
+    align-items: center;
+  }
+}

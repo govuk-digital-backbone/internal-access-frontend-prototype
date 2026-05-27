@@ -1,0 +1,92 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+GOV.UK {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+<header>
+  {{ govukHeader({
+  serviceName: "Internal Access",
+  serviceUrl: "/"
+  }) }}
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+  navigation: [
+  {
+  href: "/dashboard/branch/manage-access-services/apps",
+  text: "Apps"
+  },
+  {
+  href: "/dashboard/branch/manage-access-services/manage-apps",
+  text: "Manage app clients",
+  active: true
+  },
+  {
+  href: "#",
+  text: "Profile"
+  },
+  {
+  href: "#",
+  text: "Support"
+  }
+  ]
+  }) }}
+
+  <!--
+    {{ govukPhaseBanner({
+      tag: {
+        text: "Private Beta"
+      },
+      html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }} -->
+</header>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href="/self-service/manage-apps" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">App details</h1>
+        <h2 class="govuk-heading-m">About the app</h2>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="app-name"> App name </label>
+          <div id="app-name-hint" class="govuk-hint">This is the name shown on the dashboard.</div>
+          <input class="govuk-input" id="app-name" name="appName" type="text" aria-describedby="app-name-hint"></input>
+        </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="app-description"> App description (optional) </label>
+        <div id="app-description-hint" class="govuk-hint">A short description shown in the dashboard.</div>
+        <textarea class="govuk-textarea" id="app-description" name="appDescription" rows="3"></textarea>
+      </div>
+
+      <h2 class="govuk-heading-m">Who can manage the app</h2>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="app-description"> App managers </label>
+        <div id="app-description-hint" class="govuk-hint">You are added as a manager by default. Managers can update settings and control access for the app. Enter one email address per line.</div>
+        <textarea class="govuk-textarea" id="app-description" name="appDescription" rows="3"></textarea>
+      </div>
+
+    <div class="govuk-button-group">
+      <a href="sign-in-settings.html" type="submit" class="govuk-button" data-module="govuk-button">
+        Continue </a>
+      <a href="/self-service/manage-apps" type="submit" class="govuk-button govuk-button--secondary"
+        data-module="govuk-button"> Cancel setup </a>
+    </div>
+
+
+</div>
+</div>
+</main>
+</div>
+
+
+{% endblock %}

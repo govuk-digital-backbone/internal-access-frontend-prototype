@@ -1,0 +1,113 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+GOV.UK {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+<header>
+  {{ govukHeader({
+  serviceName: "Internal Access",
+  serviceUrl: "/"
+  }) }}
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+  navigation: [
+  {
+  href: "/dashboard/branch/manage-access-services/apps",
+  text: "Apps"
+  },
+  {
+  href: "/dashboard/branch/manage-access-services/manage-apps",
+  text: "Manage app clients",
+  active: true
+  },
+  {
+  href: "#",
+  text: "Profile"
+  },
+  {
+  href: "#",
+  text: "Support"
+  }
+  ]
+  }) }}
+
+  <!--
+    {{ govukPhaseBanner({
+      tag: {
+        text: "Private Beta"
+      },
+      html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }} -->
+</header>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href="app-details.html" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Sign in settings</h1>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sign-in-url">
+            Sign in URL
+          </label>
+          <div id="sign-in-url-hint" class="govuk-hint">
+            The URL users are redirected to after they sign in.
+          </div>
+          <input class="govuk-input govuk-input govuk-input--extra-letter-spacing" id="sign-in-url" name="signInUrl"
+            type="text" spellcheck="false" aria-describedby="sign-in-url-hint" inputmode="url">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sign-out-url">
+            Sign out URL
+          </label>
+          <div id="sign-out-url-hint" class="govuk-hint">
+            The URL users are redirected to after they sign out.
+          </div>
+          <input class="govuk-input govuk-input govuk-input--extra-letter-spacing" id="sign-out-url" name="signOutUrl"
+            type="text" spellcheck="false" aria-describedby="sign-out-url-hint" inputmode="url">
+        </div>
+
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-!-padding-bottom-5">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+            <label class="govuk-label govuk-checkboxes__label" for="waste">
+              Show a confirmation page if the user already has an active session
+            </label>
+          </div>
+          </div>
+        </div>
+
+        <div class="govuk-button-group">
+          
+            <a href="access-settings.html" type="submit" class="govuk-button" data-module="govuk-button">
+              Continue
+            </a>
+            <a href="/self-service/manage-apps" type="submit" class="govuk-button govuk-button--secondary"
+              data-module="govuk-button"> Cancel setup </a>
+
+          
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+</div>
+</div>
+</main>
+</div>
+
+
+{% endblock %}

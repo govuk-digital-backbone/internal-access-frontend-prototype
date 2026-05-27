@@ -1,0 +1,154 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+GOV.UK {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+<header>
+  {{ govukHeader({
+  serviceName: "Internal Access",
+  serviceUrl: "/"
+  }) }}
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+  navigation: [
+  {
+  href: "/dashboard/branch/manage-access-services/apps",
+  text: "Apps"
+  },
+  {
+  href: "/dashboard/branch/manage-access-services/manage-apps",
+  text: "Manage app clients",
+  active: true
+  },
+  {
+  href: "#",
+  text: "Profile"
+  },
+  {
+  href: "#",
+  text: "Support"
+  }
+  ]
+  }) }}
+
+  <!--
+    {{ govukPhaseBanner({
+      tag: {
+        text: "Private Beta"
+      },
+      html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }} -->
+</header>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-!-padding-top-0" style="margin-top: -15px;">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-s govuk-!-font-weight-bold govuk-!-margin-bottom-3">Civil Service Jobs</h1>
+        <hr class="govuk-section-break govuk-section-break--visible"
+          style="border-bottom: 1px solid #b1b4b6; margin-bottom: 25px;">
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-one-third">
+
+        <style>
+          .notify-nav-link:hover {
+            text-decoration: underline !important;
+          }
+        </style>
+
+        <nav aria-label="Side navigation">
+          <ul class="govuk-list" style="padding-left: 0; margin-top: 0;">
+            <li class="govuk-!-margin-bottom-3">
+              <a class="govuk-link govuk-link--no-visited-state notify-nav-link" href="client-details.html"
+                style="color: #1d70b8; text-decoration: none; display: block; font-size: 19px;">
+                Client details
+              </a>
+            </li>
+            <li class="govuk-!-margin-bottom-3">
+              <a class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold notify-nav-link"
+                href="app-details.html" style="color: #1d70b8; text-decoration: none; display: block; font-size: 19px;">
+                App details
+              </a>
+            </li>
+            <li class="govuk-!-margin-bottom-3">
+              <a class="govuk-link govuk-link--no-visited-state notify-nav-link" href="settings.html"
+                style="color: #1d70b8; text-decoration: none; display: block; font-size: 19px;">
+                Settings
+              </a>
+            </li>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+              style="border-bottom: 1px solid #b1b4b6; margin-top: 20px; margin-bottom: 20px;">
+
+            <li class="govuk-!-margin-bottom-3">
+              <a class="govuk-link govuk-link--no-visited-state notify-nav-link" href="#"
+                style="color: #d4351c; text-decoration: none; display: block; font-size: 19px;">
+                Delete app
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l govuk-!-margin-top-0">App details</h2>
+        <h3 class="govuk-heading-m govuk-!-padding-top-5">About the app</h3>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              App name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Civil Service Jobs
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> app name</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              App description
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Find jobs in the Civil Service and central government organisations.
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> app description</span></a>
+            </dd>
+          </div>
+        </dl>
+
+        <h3 class="govuk-heading-m govuk-!-padding-top-8">Who can manage the app</h3>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              App managers
+            </dt>
+            <dd class="govuk-summary-list__value">
+              daniel.teanby@dsit.gov.uk
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> app managers</span></a>
+            </dd>
+          </div>
+        </dl>
+
+      </div>
+
+    </div>
+
+  </main>
+</div>
+{% endblock %}

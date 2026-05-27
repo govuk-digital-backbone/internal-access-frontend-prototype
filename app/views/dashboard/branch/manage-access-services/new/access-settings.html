@@ -1,0 +1,93 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+GOV.UK {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+<header>
+  {{ govukHeader({
+  serviceName: "Internal Access",
+  serviceUrl: "/"
+  }) }}
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+  navigation: [
+  {
+  href: "/dashboard/branch/manage-access-services/apps",
+  text: "Apps"
+  },
+  {
+  href: "/dashboard/branch/manage-access-services/manage-apps",
+  text: "Manage app clients",
+  active: true
+  },
+  {
+  href: "#",
+  text: "Profile"
+  },
+  {
+  href: "#",
+  text: "Support"
+  }
+  ]
+  }) }}
+
+  <!--
+    {{ govukPhaseBanner({
+      tag: {
+        text: "Private Beta"
+      },
+      html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }} -->
+</header>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href="sign-in-settings.html" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Who can access the app</h1>
+        <p class="govuk-body">Access to the app is blocked by default. You must add allow rules to let people sign in
+          using one or both of the options below.</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="app-description"> Allow access to email domains </label>
+          <div id="app-description-hint" class="govuk-hint">People with these domains can access the app. Enter one
+            domain per line.</div>
+          <textarea class="govuk-textarea" id="app-description" name="appDescription" rows="3"></textarea>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="app-description"> Allow access to specific email addresses </label>
+          <div id="app-description-hint" class="govuk-hint">People with these email addresses can access the app. Enter one email address per line.</div>
+          <textarea class="govuk-textarea" id="app-description" name="appDescription" rows="3"></textarea>
+        </div>
+
+        <div class="govuk-button-group">
+          
+            <a href="connect-app.html" type="submit" class="govuk-button" data-module="govuk-button">
+              Continue
+            </a>
+            <a href="/self-service/manage-apps" type="submit" class="govuk-button govuk-button--secondary"
+              data-module="govuk-button"> Cancel setup </a>
+
+          
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+</div>
+</main>
+</div>
+
+
+{% endblock %}

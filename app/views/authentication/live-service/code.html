@@ -16,24 +16,6 @@
   </header>
 {% endblock %}
 
-{% block containerStart %}
-  {{ govukBreadcrumbs({
-    items: [
-      {
-        text: "Internal Access",
-        href: "/live-service/internal-access"
-      },
-      {
-        text: "Sign In",
-        href: "/live-service/sign-in"
-      },
-      {
-        text: "Code"
-      }
-    ]
-  }) }}
-{% endblock %}
-
 {% block content %}
 
 <!-- ERROR MESSAGE SUMMARY TEMPLATE - UNCOMMENT TO USE
@@ -66,7 +48,7 @@
     </div>
 
     
-  <form action="/live-service/code-check" method="post">
+  <form action="/authentication/live-service/code-check" method="post">
     
     {{ govukInput({
   label: {
