@@ -6,7 +6,10 @@
 
 {% block header %}
   <header>
-    {{govukHeader()}}
+    {{ govukHeader({
+      productName: "Internal Access",
+      serviceUrl: "/"
+    }) }}
     {{ govukPhaseBanner({
       tag: {
         text: "Private Beta"

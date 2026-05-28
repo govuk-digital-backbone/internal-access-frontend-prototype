@@ -64,3 +64,59 @@
     align-items: center;
   }
 }
+
+// Masthead styling
+.app-masthead {
+	background-color: #1d70b8;
+	margin-top: -50px;
+	width: 100vw;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+}
+
+@media (min-width: 40.0625em) {
+	.app-masthead {
+		padding-top: 40px;
+	}
+}
+
+@media (max-width: 640px) {
+	.app-masthead {
+		margin-top: -30px;
+		padding-top: 30px;
+	}
+}
+
+.app-masthead__title,
+.app-masthead__subtitle,
+.app-masthead p {
+	color: #ffffff;
+}
+
+// Make the grid row act as a flex container
+.app-equal-height-row {
+  display: flex;
+  flex-wrap: wrap; // Allows columns to wrap to the next line if needed
+}
+
+// Make the columns flex children and fill height
+.app-equal-height-row .govuk-grid-column-one-third {
+  display: flex;
+  flex-direction: column;
+}
+
+// Ensure the result cards expand to fill the column height
+.app-c-result-card {
+  position: relative;
+  padding: 25px 25px;
+  border: 1px solid #b1b4b6;
+  margin-bottom: 30px;
+  
+  // ADD THESE TWO LINES:
+  display: flex;
+  flex-direction: column;
+  flex: 1; 
+}

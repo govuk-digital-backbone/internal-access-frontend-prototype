@@ -4,63 +4,71 @@
 
 {% block content %}
 
-<main class="govuk-main-wrapper" id="main-content">
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">
-        {{ serviceName }} prototypes
-      </h1>
-
-      <p class="govuk-body govuk-!-margin-bottom-6">Choose a prototype to explore different parts of the service.</p>
-
-
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-6">Start a prototype</h2>
-
-
-      <h3 class="govuk-heading-s">
-        <a href="/authentication" class="govuk-link">
-          Sign in to the service
-        </a>
-      </h3>
-      <p class="govuk-body">Go through the sign-in and authentication journey.</p>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-      <h3 class="govuk-heading-s">
-        <a href="/dashboard" class="govuk-link">
-          Use the dashboard
-        </a>
-      </h3>
-      <p class="govuk-body">View and manage access after signing in.</p>
-
-
+<div class="app-masthead govuk-!-padding-bottom-6 govuk-!-margin-bottom-6">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h1 class="app-masthead__title govuk-heading-xl govuk-!-margin-bottom-6">
+          {{ serviceName }} prototypes
+        </h1>
+        
+        <div class="app-masthead__description">
+          <p class="govuk-body">This site contains prototypes for different parts of the <strong>{{ serviceName
+              }}</strong> service</p>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
 
-    <!--
-    <div class="govuk-grid-column-one-third">
-      <aside class="app-related-items">
-        <h2 class="govuk-heading-s" id="support-title">Project resources</h2>
-        <nav role="navigation" aria-labelledby="support-title">
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a class="govuk-link"
-                href="https://github.com/govuk-digital-backbone/internal-access-frontend-prototype">GitHub
-                Repository</a>
-            </li>
-            <li>
-              <a class="govuk-link"
-                href="https://app.mural.co/t/octo5699/m/gdsservicetransformation7597/1768907305123/af5842fd9ca647b3786b8a9b1e0ab6b5166700e0?sender=u8e6f444cdad7dd7658694666"
-                target="_blank">User Research Notes</a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-    </div>
 
-    -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-6 govuk-!-margin-top-3">Explore our service</h2>
 
   </div>
-</main>
 
-{% endblock %}
+  <div class="govuk-grid-column-one-half">
+
+    <div class="app-c-result-card govuk-!-margin-top-2">
+      <h2 class="gem-c-heading govuk-heading-m govuk-!-margin-bottom-2">Sign in to the service</h2>
+      <div class="govuk-body app-c-result-card__description">
+        <p>Go through the sign-in and authentication journey.</p>
+      </div>
+
+      <h3 class="govuk-heading-s">
+        <a href="/authentication" class="govuk-link govuk-link--no-visited-state">
+          View authentication prototypes
+        </a>
+      </h3>
+    </div>
+
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+
+    <div class="app-c-result-card govuk-!-margin-top-2">
+      <h2 class="gem-c-heading govuk-heading-m govuk-!-margin-bottom-2">Use the dashboard</h2>
+      <div class="govuk-body app-c-result-card__description">
+        <p>View and manage access after signing in.</p>
+      </div>
+
+      <h3 class="govuk-heading-s">
+        <a href="/dashboard" class="govuk-link govuk-link--no-visited-state">
+          View dashboard prototypes
+        </a>
+      </h3>
+    </div>
+
+
+
+
+
+  </div>
+
+
+  </main>
+
+  {% endblock %}

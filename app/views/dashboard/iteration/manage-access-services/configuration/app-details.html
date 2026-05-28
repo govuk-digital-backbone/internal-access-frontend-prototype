@@ -15,11 +15,11 @@ GOV.UK {{ serviceName }}
   {{ govukServiceNavigation({
   navigation: [
   {
-  href: "/dashboard/branch/manage-access-services/apps",
+  href: "/dashboard/iteration/manage-access-services/apps",
   text: "Apps"
   },
   {
-  href: "/dashboard/branch/manage-access-services/manage-apps",
+  href: "/dashboard/iteration/manage-access-services/manage-apps",
   text: "Manage app clients",
   active: true
   },
@@ -77,14 +77,14 @@ GOV.UK {{ serviceName }}
               </a>
             </li>
             <li class="govuk-!-margin-bottom-3">
-              <a class="govuk-link govuk-link--no-visited-state notify-nav-link" href="app-details.html"
-                style="color: #1d70b8; text-decoration: none; display: block; font-size: 19px;">
+              <a class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold notify-nav-link"
+                href="app-details.html" style="color: #1d70b8; text-decoration: none; display: block; font-size: 19px;">
                 App details
               </a>
             </li>
             <li class="govuk-!-margin-bottom-3">
-              <a class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold notify-nav-link"
-                href="settings.html" style="color: #1d70b8; text-decoration: none; display: block; font-size: 19px;">
+              <a class="govuk-link govuk-link--no-visited-state notify-nav-link" href="settings.html"
+                style="color: #1d70b8; text-decoration: none; display: block; font-size: 19px;">
                 Settings
               </a>
             </li>
@@ -103,72 +103,46 @@ GOV.UK {{ serviceName }}
       </div>
 
       <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-l govuk-!-margin-top-0">Settings</h2>
-
-        <h3 class="govuk-heading-m govuk-!-padding-top-5">Sign in settings</h3>
+        <h2 class="govuk-heading-l govuk-!-margin-top-0">App details</h2>
+        <h3 class="govuk-heading-m govuk-!-padding-top-5">About the app</h3>
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Sign-in URL
+              App name
             </dt>
             <dd class="govuk-summary-list__value">
-              civilservicejobs.service.gov.uk
+              Civil Service Jobs
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> sign-in URL</span></a>
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> app name</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Sign out URL
+              App description
             </dt>
             <dd class="govuk-summary-list__value">
-              civilservicejobs.service.gov.uk
+              Find jobs in the Civil Service and central government organisations.
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> sign out URL</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Show confirmation page
-            </dt>
-            <dd class="govuk-summary-list__value">
-              No
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> show confirmation
-                  page</span></a>
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> app description</span></a>
             </dd>
           </div>
         </dl>
 
-        
-        <h3 class="govuk-heading-m govuk-!-padding-top-8" >Who can access the app</h3>
+        <h3 class="govuk-heading-m govuk-!-padding-top-8">Who can manage the app</h3>
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Allowed email domains
+              App managers
             </dt>
             <dd class="govuk-summary-list__value">
-              .gov.uk
+              daniel.teanby@dsit.gov.uk
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> allowed email domains</span></a>
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> app managers</span></a>
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Allowed email addresses
-            </dt>
-            <dd class="govuk-summary-list__value">
-              No restrictions set
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> allowed email addresses</span></a>
-            </dd>
-          </div>
-          
         </dl>
 
       </div>

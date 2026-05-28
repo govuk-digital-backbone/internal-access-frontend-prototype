@@ -1,0 +1,101 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+GOV.UK {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+<header>
+  {{ govukHeader({
+  productName: "Internal Access",
+  serviceUrl: "/"
+  }) }}
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+  navigation: [
+  {
+  href: "/dashboard/iteration/manage-access-services/apps",
+  text: "Apps",
+  active: true
+  },
+  {
+  href: "/dashboard/iteration/manage-access-services/manage-apps",
+  text: "Manage app clients"
+  },
+  {
+  href: "#",
+  text: "Profile"
+  },
+  {
+  href: "#",
+  text: "Support"
+  }
+  ]
+  }) }}
+
+  <!--
+    {{ govukPhaseBanner({
+      tag: {
+        text: "Private Beta"
+      },
+      html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }} -->
+</header>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">Apps you can access</h1>
+        <p class="govuk-body">You can use these apps when you sign in to Internal Access.</p>
+      </div>
+
+      <div class="govuk-grid-column-full">
+        <div class="govuk-grid-row app-equal-height-row">
+          <div class="govuk-grid-column-one-third">
+            <div class="app-c-result-card govuk-!-margin-top-2">
+              <h2 class="gem-c-heading govuk-heading-s govuk-!-margin-bottom-2"><a
+                  class="govuk-link govuk-link--no-visited-state" href="https://ai.gov.uk/knowledge-hub/">AI Knowledge
+                  Hub</a></h2>
+              <p>
+                Explore AI in government - find tools, explore approaches, improve delivery.
+              </p>
+            </div>
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+            <div class="app-c-result-card govuk-!-margin-top-2">
+              <h2 class="gem-c-heading govuk-heading-s govuk-!-margin-bottom-2"><a
+                  class="govuk-link govuk-link--no-visited-state" href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi">Civil Service Jobs</a></h2>
+              <div class="app-c-result-card__description">
+                <p>Find jobs in the Civil Service and central government organisations.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+            <div class="app-c-result-card govuk-!-margin-top-2">
+              <h2 class="gem-c-heading govuk-heading-s govuk-!-margin-bottom-2"><a
+                  class="govuk-link govuk-link--no-visited-state" href="https://uk.travelctm.com/">CTM Travel Bookings</a></h2>
+              <div class="app-c-result-card__description">
+                <p>Book travel or manage existing bookings.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+  </main>
+</div>
+
+
+{% endblock %}

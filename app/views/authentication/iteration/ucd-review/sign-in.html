@@ -5,18 +5,18 @@ GOV.UK {{ serviceName }}
 {% endblock %}
 
 {% block header %}
-<header>
-  {{ govukHeader({
-  serviceName: "Internal Access",
-  serviceUrl: "/"
-  }) }}
-  {{ govukPhaseBanner({
-  tag: {
-  text: "Private Beta"
-  },
-  html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
-</header>
+  <header>
+    {{ govukHeader({
+      productName: "Internal Access",
+      serviceUrl: "/"
+    }) }}
+    {{ govukPhaseBanner({
+      tag: {
+        text: "Private Beta"
+      },
+      html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+  </header>
 {% endblock %}
 
 {% block content %}
@@ -62,7 +62,7 @@ GOV.UK {{ serviceName }}
       </label>
     </div>
 
-    <div class="govuk-button-group">
+    <div class="govuk-button-group govuk-!-margin-top-6">
       <button type="submit" class="govuk-button" data-module="govuk-button">
         Send one-time code
       </button>

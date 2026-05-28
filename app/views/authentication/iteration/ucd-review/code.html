@@ -5,15 +5,18 @@ GOV.UK {{ serviceName }}
 {% endblock %}
 
 {% block header %}
-<header>
-  {{govukHeader()}}
-  {{ govukPhaseBanner({
-  tag: {
-  text: "Private Beta"
-  },
-  html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
-</header>
+  <header>
+    {{ govukHeader({
+      productName: "Internal Access",
+      serviceUrl: "/"
+    }) }}
+    {{ govukPhaseBanner({
+      tag: {
+        text: "Private Beta"
+      },
+      html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+  </header>
 {% endblock %}
 
 {% block content %}
@@ -75,7 +78,7 @@ GOV.UK {{ serviceName }}
     </form>
 
     <p class="govuk-body">
-      <a href="#" class="govuk-link">Request a new code</a>
+      <a href="./request.html" class="govuk-link">Request a new code</a>
     </p>
 
   </div>

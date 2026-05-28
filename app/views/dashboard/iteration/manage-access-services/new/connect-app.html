@@ -7,7 +7,7 @@ GOV.UK {{ serviceName }}
 {% block header %}
 <header>
   {{ govukHeader({
-  serviceName: "Internal Access",
+  productName: "Internal Access",
   serviceUrl: "/"
   }) }}
   {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
@@ -15,11 +15,11 @@ GOV.UK {{ serviceName }}
   {{ govukServiceNavigation({
   navigation: [
   {
-  href: "/dashboard/branch/manage-access-services/apps",
+  href: "/dashboard/iteration/manage-access-services/apps",
   text: "Apps"
   },
   {
-  href: "/dashboard/branch/manage-access-services/manage-apps",
+  href: "/dashboard/iteration/manage-access-services/manage-apps",
   text: "Manage app clients",
   active: true
   },
@@ -94,7 +94,7 @@ GOV.UK {{ serviceName }}
 
         <div class="govuk-button-group">
           
-            <a href="/dashboard/branch/manage-access-services/configuration/client-details.html" type="submit" class="govuk-button govuk-button--secondary"
+            <a href="/dashboard/iteration/manage-access-services/configuration/client-details.html" type="submit" class="govuk-button govuk-button--secondary"
               data-module="govuk-button"> View client configuration </a>
 
             <a class="govuk-link" href="../manage-apps.html">Back to apps</a>

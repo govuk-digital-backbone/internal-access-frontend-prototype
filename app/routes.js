@@ -46,6 +46,8 @@ router.get('/authentication/live-service/start-fresh', function (req, res) {
 module.exports = router
 
 
+
+
 // --- UCD Review Iteration Routes ---
 
 // Check email input on sign-in
@@ -56,6 +58,22 @@ router.post('/authentication/iteration/ucd-review/start-check', function (req, r
   if (!email || email.trim() === "" || !email.includes('@')) {
     req.session.data['error'] = true
     res.redirect('/authentication/iteration/ucd-review/sign-in')
+  } else {
+    // SUCCESS: Clear error flags and head to the code entry page
+    req.session.data['error'] = false
+    req.session.data['codeError'] = false // Reset code error for a fresh start
+    res.redirect('/authentication/iteration/ucd-review/code')
+  }
+})
+
+// Check email input on request new code page
+router.post('/authentication/iteration/ucd-review/request-check', function (req, res) {
+  const email = req.session.data['emailAddress']
+
+  // Validation: Check if empty OR if it doesn't contain an '@' character
+  if (!email || email.trim() === "" || !email.includes('@')) {
+    req.session.data['error'] = true
+    res.redirect('/authentication/iteration/ucd-review/request')
   } else {
     // SUCCESS: Clear error flags and head to the code entry page
     req.session.data['error'] = false
@@ -85,4 +103,13 @@ router.get('/authentication/iteration/ucd-review/sign-in', function (req, res) {
   
   // Render the view template manually
   res.render('authentication/iteration/ucd-review/sign-in')
+})
+
+// Whenever a user visits the request a new code page directly, reset the error flag 
+router.get('/authentication/iteration/ucd-review/request-check', function (req, res) {
+  // Clear the error flag so it's fresh
+  req.session.data['error'] = false
+  
+  // Render the view template manually
+  res.render('authentication/iteration/ucd-review/request-check')
 })

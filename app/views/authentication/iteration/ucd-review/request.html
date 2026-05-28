@@ -1,0 +1,98 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+GOV.UK {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+<header>
+  {{ govukHeader({
+  serviceName: "Internal Access",
+  serviceUrl: "/"
+  }) }}
+  {{ govukPhaseBanner({
+  tag: {
+  text: "Private Beta"
+  },
+  html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+</header>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <a href="code.html" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+
+
+        {% if data['error'] %}
+        {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+        {
+        text: "Enter your email address",
+        href: "#email-address"
+        }
+        ]
+        }) }}
+        {% endif %}
+
+        <h1 class="govuk-heading-l">
+          Request a new one-time code
+        </h1>
+
+        <p class="govuk-body">Emails can take a few minutes to arrive. You should also check your spam folder.</p>
+        <p class="govuk-body">If you still haven’t received a code, you can request a new one.</p>
+
+
+
+        <form action="/authentication/iteration/ucd-review/request-check" method="post">
+          {{ govukInput({
+          label: {
+          text: "Enter your email address",
+          classes: "govuk-body",
+          isPageHeading: false
+          },
+          hint: {
+          text: "We’ll use this to verify your email address"
+          },
+          id: "email-address",
+          name: "emailAddress",
+          errorMessage: {
+          text: "Enter your email address"
+          } if data['error'],
+          value: data['emailAddress']
+          }) }}
+
+
+
+          <div class="govuk-button-group">
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Send a new one-time code
+            </button>
+          </div>
+
+        </form>
+
+
+
+
+
+      </div>
+
+
+
+
+    </div>
+
+
+
+
+</div>
+
+{% endblock %}

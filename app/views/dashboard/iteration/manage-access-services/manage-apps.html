@@ -7,7 +7,7 @@ GOV.UK {{ serviceName }}
 {% block header %}
 <header>
   {{ govukHeader({
-  serviceName: "Internal Access",
+  productName: "Internal Access",
   serviceUrl: "/"
   }) }}
   {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
@@ -15,11 +15,11 @@ GOV.UK {{ serviceName }}
   {{ govukServiceNavigation({
   navigation: [
   {
-  href: "/dashboard/branch/manage-access-services/apps",
+  href: "/dashboard/iteration/manage-access-services/apps",
   text: "Apps"
   },
   {
-  href: "/dashboard/branch/manage-access-services/manage-apps",
+  href: "/dashboard/iteration/manage-access-services/manage-apps",
   text: "Manage app clients",
   active: true
   },
@@ -60,7 +60,7 @@ GOV.UK {{ serviceName }}
             </p>
           </div>
           <div class="govuk-grid-column-one-third govuk-!-text-align-right">
-            <a href="/dashboard/branch/manage-access-services/new/app-details" role="button" class="govuk-button" data-module="govuk-button">
+            <a href="/dashboard/iteration/manage-access-services/new/app-details" role="button" class="govuk-button" data-module="govuk-button">
               Add a new app
             </a>
           </div>
@@ -123,7 +123,7 @@ GOV.UK {{ serviceName }}
                 </td>
                 <td class="govuk-table__cell govuk-!-font-weight-regular">AI Knowledge Hub</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Active</strong></td>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="/dashboard/branch/manage-access-services/configuration/client-details.html" class="govuk-link">View
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="/dashboard/iteration/manage-access-services/configuration/client-details.html" class="govuk-link">View
                     configuration</a></td>
               </tr>
 
@@ -142,7 +142,7 @@ GOV.UK {{ serviceName }}
                 </td>
                 <td class="govuk-table__cell govuk-!-font-weight-regular">Consult</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Active</strong></td>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="/dashboard/branch/manage-access-services/configuration/client-details.html" class="govuk-link">View
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="/dashboard/iteration/manage-access-services/configuration/client-details.html" class="govuk-link">View
                     configuration</a></td>
               </tr>
 
@@ -161,7 +161,7 @@ GOV.UK {{ serviceName }}
                 </td>
                 <td class="govuk-table__cell govuk-!-font-weight-regular">Lex</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Not set up</strong></td>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="/dashboard/branch/manage-access-services/configuration/client-details.html" class="govuk-link">View
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="/dashboard/iteration/manage-access-services/configuration/client-details.html" class="govuk-link">View
                     configuration</a></td>
               </tr>
 
@@ -180,7 +180,7 @@ GOV.UK {{ serviceName }}
                 </td>
                 <td class="govuk-table__cell govuk-!-font-weight-regular">Parlex</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Not set up</strong></td>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="/dashboard/branch/manage-access-services/configuration/client-details.html" class="govuk-link">View
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="/dashboard/iteration/manage-access-services/configuration/client-details.html" class="govuk-link">View
                     configuration</a></td>
               </tr>
 
