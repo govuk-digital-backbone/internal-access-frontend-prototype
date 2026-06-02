@@ -5,51 +5,61 @@ GOV.UK {{ serviceName }}
 {% endblock %}
 
 {% block header %}
-<header>
-  {{ govukHeader({
-  productName: "Internal Access",
-  serviceUrl: "/"
-  }) }}
+<div style="position: relative;">
+
+  <header class="govuk-header" role="banner" data-module="govuk-header">
+    {{ govukHeader({
+      productName: "Internal Access",
+      serviceUrl: "/"
+    }) }}
+  </header>
+  
+  <div class="govuk-width-container" style="position: relative; height: 0;">
+    <div style="position: absolute; right: 0px; top: -43px; z-index: 9999;">
+      <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold" style="color: white; text-decoration: none; font-size: 19px;">Sign out</a>
+    </div>
+  </div>
+
   {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
   {{ govukServiceNavigation({
-  navigation: [
-  {
-  href: "/dashboard/iteration/manage-access-services/apps",
-  text: "Apps"
-  },
-  {
-  href: "/dashboard/iteration/manage-access-services/manage-apps",
-  text: "Manage app clients",
-  active: true
-  },
-  {
-  href: "#",
-  text: "Profile"
-  },
-  {
-  href: "#",
-  text: "Support"
-  }
-  ]
+    navigation: [
+      {
+        href: "/dashboard/iteration/manage-access-services/apps",
+        text: "Apps"
+      },
+      {
+        href: "/dashboard/iteration/manage-access-services/manage-apps",
+        text: "Manage app clients",
+        active: true
+      },
+      {
+        href: "#",
+        text: "Profile"
+      },
+      {
+        href: "#",
+        text: "Support"
+      }
+    ]
   }) }}
 
-  
-    {{ govukPhaseBanner({
-      tag: {
-        text: "Private Beta"
-      },
-      html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-    }) }}
-</header>
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Private Beta"
+    },
+    html: 'This is a new service - your <a class="govuk-link govuk-link--no-visited-state" href="#">feedback</a> will help us to improve it.'
+  }) }} 
+
+</div>
 {% endblock %}
 
 
 
 {% block content %}
 <div class="govuk-width-container">
-  <main class="govuk-main-wrapper">
-    <div class="govuk-grid-row">
+  <main class="govuk-main-wrapper govuk-!-padding-top-0">
+    <div class="govuk-grid-row ">
       <div class="govuk-grid-column-full">
         
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Apps you can manage</h1>
