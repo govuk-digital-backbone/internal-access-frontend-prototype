@@ -34,13 +34,13 @@ GOV.UK {{ serviceName }}
   ]
   }) }}
 
-  <!--
+  
     {{ govukPhaseBanner({
       tag: {
         text: "Private Beta"
       },
       html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-    }) }} -->
+    }) }}
 </header>
 {% endblock %}
 
@@ -51,33 +51,21 @@ GOV.UK {{ serviceName }}
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
+        
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Apps you can manage</h1>
+        <p class="govuk-body govuk-!-margin-bottom-6">Manage existing apps or set up single sign-on for a new app.</p>
 
-        <div class="govuk-grid-row govuk-!-margin-bottom-4"
-          style="align-items: flex-end; display: flex; flex-wrap: wrap;">
-          <div class="govuk-grid-column-two-thirds">
-            <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Manage app clients</h1>
-            <p class="govuk-body govuk-!-margin-bottom-0">Manage existing apps or set up single sign-on for a new app.
-            </p>
-          </div>
-          <div class="govuk-grid-column-one-third govuk-!-text-align-right">
-            <a href="/dashboard/iteration/manage-access-services/new/app-details" role="button" class="govuk-button" data-module="govuk-button">
+        <div class="govuk-grid-row govuk-!-margin-bottom-4" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+          <div class="govuk-grid-column-one-half">
+            <a href="/dashboard/iteration/manage-access-services/new/app-details" role="button" class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">
               Add a new app
             </a>
           </div>
-        </div>
-
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-        <div class="govuk-grid-row govuk-!-margin-bottom-4"
-          style="align-items: center; display: flex; flex-wrap: wrap;">
-          <div class="govuk-grid-column-one-half">
-            <h2 class="govuk-heading-m govuk-!-margin-bottom-0">Apps you can manage</h2>
-          </div>
+          
           <div class="govuk-grid-column-one-half govuk-!-text-align-right">
-            <div id="batch-control-bar"
-              style="display: none; align-items: center; justify-content: flex-end; gap: 15px;">
-              <span class="govuk-body govuk-!-margin-bottom-0"><span id="selected-count">0</span> apps selected</span>
-              <a href="#" id="clear-selection" class="govuk-link govuk-body govuk-!-margin-bottom-0">Clear selection</a>
+            <div id="batch-control-bar" style="display: none; align-items: center; justify-content: flex-end; gap: 20px;">
+              <span class="govuk-body govuk-!-margin-bottom-0" style="color: #505a5f;"><span id="selected-count">0</span> apps selected</span>
+              <a href="#" id="clear-selection" class="govuk-link--no-visited-state govuk-body govuk-!-margin-bottom-0">Clear selection</a>
               <button class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" data-module="govuk-button">
                 Change access settings
               </button>
@@ -85,103 +73,106 @@ GOV.UK {{ serviceName }}
           </div>
         </div>
 
-        <div class="govuk-grid-column-full govuk-!-padding-left-0 govuk-!-padding-right-0">
+        <div class="govuk-grid-column-full govuk-!-padding-left-0 govuk-!-padding-right-0 govuk-!-margin-top-4">
           <table class="govuk-table">
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header" style="width: 34px; padding-right: 0; border-bottom: none;">
+                <th scope="col" class="govuk-table__header" style="width: 40px; padding-right: 0;">
                   <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                     <div class="govuk-checkboxes__item">
                       <input class="govuk-checkboxes__input" id="select-all-apps" type="checkbox">
-                      <label class="govuk-label govuk-checkboxes__label" for="select-all-apps"
-                        style="padding: 0; min-height: auto;">
+                      <label class="govuk-label govuk-checkboxes__label" for="select-all-apps" style="padding: 0; min-height: auto;">
                         <span class="govuk-visually-hidden">Select all apps</span>
                       </label>
                     </div>
                   </div>
                 </th>
-                <th scope="col" class="govuk-table__header" style="vertical-align: middle;">App name</th>
-                <th scope="col" class="govuk-table__header" style="vertical-align: middle;">Status</th>
-                <th scope="col" class="govuk-table__header" style="vertical-align: middle;"></th>
+                <th scope="col" class="govuk-table__header">App name</th>
+                <th scope="col" class="govuk-table__header">Status</th>
+                <th scope="col" class="govuk-table__header"></th>
               </tr>
             </thead>
 
             <tbody class="govuk-table__body">
 
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell" style="padding-right: 0; width: 34px;">
+                <td class="govuk-table__cell" style="padding-right: 0;">
                   <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                     <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input app-checkbox" id="app-ai-hub" name="selectedApps"
-                        type="checkbox" value="ai-hub">
-                      <label class="govuk-label govuk-checkboxes__label" for="app-ai-hub"
-                        style="padding: 0; min-height: auto;">
+                      <input class="govuk-checkboxes__input app-checkbox" id="app-ai-hub" name="selectedApps" type="checkbox" value="ai-hub">
+                      <label class="govuk-label govuk-checkboxes__label" for="app-ai-hub" style="padding: 0; min-height: auto;">
                         <span class="govuk-visually-hidden">Select AI Knowledge Hub</span>
                       </label>
                     </div>
                   </div>
                 </td>
                 <td class="govuk-table__cell govuk-!-font-weight-regular">AI Knowledge Hub</td>
-                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Active</strong></td>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="/dashboard/iteration/manage-access-services/configuration/client-details.html" class="govuk-link">View
-                    configuration</a></td>
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--green" style="background: #cce2d8; color: #005a30; text-transform: none; font-weight: regular; letter-spacing: 0;">Active</strong>
+                </td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                  <a href="/dashboard/iteration/manage-access-services/configuration/client-details.html" class="govuk-link govuk-link--no-visited-state">View configuration</a>
+                </td>
               </tr>
 
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell" style="padding-right: 0; width: 34px;">
+                <td class="govuk-table__cell" style="padding-right: 0;">
                   <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                     <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input app-checkbox" id="app-consult" name="selectedApps"
-                        type="checkbox" value="consult">
-                      <label class="govuk-label govuk-checkboxes__label" for="app-consult"
-                        style="padding: 0; min-height: auto;">
+                      <input class="govuk-checkboxes__input app-checkbox" id="app-consult" name="selectedApps" type="checkbox" value="consult">
+                      <label class="govuk-label govuk-checkboxes__label" for="app-consult" style="padding: 0; min-height: auto;">
                         <span class="govuk-visually-hidden">Select Consult</span>
                       </label>
                     </div>
                   </div>
                 </td>
                 <td class="govuk-table__cell govuk-!-font-weight-regular">Consult</td>
-                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Active</strong></td>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="/dashboard/iteration/manage-access-services/configuration/client-details.html" class="govuk-link">View
-                    configuration</a></td>
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--green" style="background: #cce2d8; color: #005a30; text-transform: none; font-weight: regular; letter-spacing: 0;">Active</strong>
+                </td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                  <a href="/dashboard/iteration/manage-access-services/configuration/client-details.html" class="govuk-link govuk-link--no-visited-state">View configuration</a>
+                </td>
               </tr>
 
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell" style="padding-right: 0; width: 34px;">
+                <td class="govuk-table__cell" style="padding-right: 0;">
                   <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                     <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input app-checkbox" id="app-lex" name="selectedApps"
-                        type="checkbox" value="lex">
-                      <label class="govuk-label govuk-checkboxes__label" for="app-lex"
-                        style="padding: 0; min-height: auto;">
+                      <input class="govuk-checkboxes__input app-checkbox" id="app-lex" name="selectedApps" type="checkbox" value="lex">
+                      <label class="govuk-label govuk-checkboxes__label" for="app-lex" style="padding: 0; min-height: auto;">
                         <span class="govuk-visually-hidden">Select Lex</span>
                       </label>
                     </div>
                   </div>
                 </td>
                 <td class="govuk-table__cell govuk-!-font-weight-regular">Lex</td>
-                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Not set up</strong></td>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="/dashboard/iteration/manage-access-services/configuration/client-details.html" class="govuk-link">View
-                    configuration</a></td>
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--grey" style="background: #f3f2f1; color: #505a5f; text-transform: none; font-weight: regular; letter-spacing: 0;">Not set up</strong>
+                </td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                  <a href="/dashboard/iteration/manage-access-services/configuration/client-details.html" class="govuk-link govuk-link--no-visited-state">View configuration</a>
+                </td>
               </tr>
 
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell" style="padding-right: 0; width: 34px;">
+                <td class="govuk-table__cell" style="padding-right: 0;">
                   <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                     <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input app-checkbox" id="app-parlex" name="selectedApps"
-                        type="checkbox" value="parlex">
-                      <label class="govuk-label govuk-checkboxes__label" for="app-parlex"
-                        style="padding: 0; min-height: auto;">
+                      <input class="govuk-checkboxes__input app-checkbox" id="app-parlex" name="selectedApps" type="checkbox" value="parlex">
+                      <label class="govuk-label govuk-checkboxes__label" for="app-parlex" style="padding: 0; min-height: auto;">
                         <span class="govuk-visually-hidden">Select Parlex</span>
                       </label>
                     </div>
                   </div>
                 </td>
                 <td class="govuk-table__cell govuk-!-font-weight-regular">Parlex</td>
-                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Not set up</strong></td>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="/dashboard/iteration/manage-access-services/configuration/client-details.html" class="govuk-link">View
-                    configuration</a></td>
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--grey" style="background: #f3f2f1; color: #505a5f; text-transform: none; font-weight: regular; letter-spacing: 0;">Not set up</strong>
+                </td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                  <a href="/dashboard/iteration/manage-access-services/configuration/client-details.html" class="govuk-link govuk-link--no-visited-state">View configuration</a>
+                </td>
               </tr>
 
             </tbody>

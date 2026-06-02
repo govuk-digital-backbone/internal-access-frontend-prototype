@@ -34,20 +34,19 @@ GOV.UK {{ serviceName }}
   ]
   }) }}
 
-
-  {{ govukPhaseBanner({
-  tag: {
-  text: "Private Beta"
-  },
-  html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
+  
+    {{ govukPhaseBanner({
+      tag: {
+        text: "Private Beta"
+      },
+      html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }} 
 </header>
 {% endblock %}
 
 
 
 {% block content %}
-
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
@@ -61,40 +60,38 @@ GOV.UK {{ serviceName }}
               <a class="gem-c-secondary-navigation__link" href="client-details.html">Client details</a>
             </li>
             <li class="gem-c-secondary-navigation__list-item">
-              <a class="gem-c-secondary-navigation__link  gem-c-secondary-navigation__link--current"
-                href="app-details.html" aria-current="page">App details</a>
+              <a class="gem-c-secondary-navigation__link" href="app-details.html">App details</a>
             </li>
             <li class="gem-c-secondary-navigation__list-item">
               <a class="gem-c-secondary-navigation__link" href="signin-settings.html">Sign in settings</a>
             </li>
             <li class="gem-c-secondary-navigation__list-item">
-              <a class="gem-c-secondary-navigation__link" href="access-settings.html">Who can access the app</a>
+              <a class="gem-c-secondary-navigation__link gem-c-secondary-navigation__link--current" href="access-settings.html" aria-current="page">Who can access the app</a>
             </li>
           </ul>
         </nav>
 
-        <h2 class="govuk-heading-l govuk-!-padding-top-6">App details</h2>
-        <h3 class="govuk-heading-m govuk-!-padding-top-6">About the app</h3>
+        <h2 class="govuk-heading-l govuk-!-padding-top-6">Who can access the app</h2>
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              App name
+              Allowed email domains
             </dt>
             <dd class="govuk-summary-list__value">
-              Civil Service Jobs
+              .gov.uk
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> app
-                  name</span></a>
+              <a class="govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> allowed email
+                  domains</span></a>
             </dd>
           </div>
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              App URL
+              Allowed email addresses
             </dt>
             <dd class="govuk-summary-list__value">
-              civilservicejobs.service.gov.uk
+              No restrictions set
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> app
@@ -102,51 +99,10 @@ GOV.UK {{ serviceName }}
             </dd>
           </div>
 
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              App description
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Find jobs in the Civil Service and central government organisations.
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> app
-                  description</span></a>
-            </dd>
-          </div>
         </dl>
-
-        <h2 class="govuk-heading-m govuk-!-padding-top-8">Who can manage the app</h2>
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              App managers
-            </dt>
-            <dd class="govuk-summary-list__value">
-              your.name@email.gov.uk
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> app
-                  managers</span></a>
-            </dd>
-          </div>
-        </dl>
-
-        <h2 class="govuk-heading-m govuk-!-padding-top-8">Delete the app</h2>
-        <p class="govuk-body">This deletes the client details. Your service will no longer be connected to Internal Access.</p>
-
-        <div class="govuk-button-group govuk-!-padding-top-3">
-
-          <button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button">
-            Delete app configuration
-          </button>
-
-        </div>
 
       </div>
     </div>
   </main>
 </div>
-
-
 {% endblock %}

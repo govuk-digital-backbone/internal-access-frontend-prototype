@@ -34,13 +34,13 @@ GOV.UK {{ serviceName }}
   ]
   }) }}
 
-  <!--
+  
     {{ govukPhaseBanner({
       tag: {
         text: "Private Beta"
       },
       html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-    }) }} -->
+    }) }}
 </header>
 {% endblock %}
 
@@ -51,7 +51,7 @@ GOV.UK {{ serviceName }}
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">Connect your app</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Connect your app</h1>
         <p class="govuk-body">Use these details to connect your app to the Internal Access service.</p>
 
         <div class="govuk-warning-text">
@@ -97,7 +97,7 @@ GOV.UK {{ serviceName }}
             <a href="/dashboard/iteration/manage-access-services/configuration/client-details.html" type="submit" class="govuk-button govuk-button--secondary"
               data-module="govuk-button"> View client configuration </a>
 
-            <a class="govuk-link" href="../manage-apps.html">Back to apps</a>
+            <a class="govuk-link govuk-link--no-visited-state" href="../manage-apps.html">Back to apps</a>
 
         </div>
 

@@ -1,0 +1,213 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+GOV.UK {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+<header>
+  {{ govukHeader({
+  serviceName: "Internal Access",
+  serviceUrl: "/"
+  }) }}
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+  navigation: [
+  {
+  href: "/dashboard/iteration/manage-access-services/apps",
+  text: "Apps"
+  },
+  {
+  href: "/dashboard/iteration/manage-access-services/manage-apps",
+  text: "Manage app clients",
+  active: true
+  },
+  {
+  href: "#",
+  text: "Profile"
+  },
+  {
+  href: "#",
+  text: "Support"
+  }
+  ]
+  }) }}
+
+
+  {{ govukPhaseBanner({
+  tag: {
+  text: "Private Beta"
+  },
+  html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+</header>
+{% endblock %}
+
+
+
+{% block content %}
+<nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/dashboard/iteration/manage-access-services/manage-apps.html">Manage app
+        clients</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Civil Service Jobs</a>
+    </li>
+  </ol>
+</nav>
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Configuration</h1>
+
+      </div>
+
+      <div class="govuk-grid-column-full">
+
+        <h3 class="govuk-heading-m govuk-!-margin-top-8">Client details</h3>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Client ID
+            </dt>
+            <dd class="govuk-summary-list__value">
+              b2a5a407-4590-4f10-9cee-0700928fc66b
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Copy<span class="govuk-visually-hidden"> client ID</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Client secret
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Hidden
+            </dd>
+          </div>
+        </dl>
+
+        <div class="govuk-button-group">
+          
+            <a href="#" type="submit" class="govuk-button govuk-button--secondary"
+              data-module="govuk-button"> Reset client secret </a>
+
+        </div>
+
+        <h3 class="govuk-heading-m govuk-!-padding-top-8">About the app</h3>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              App name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Civil Service Jobs
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> app name</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              App URL
+            </dt>
+            <dd class="govuk-summary-list__value">
+              civilservicejobs.service.gov.uk
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> app description</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              App description
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Find jobs in the Civil Service and central government organisations.
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> app description</span></a>
+            </dd>
+          </div>
+        </dl>
+
+        <h3 class="govuk-heading-m govuk-!-padding-top-8">Who can manage the app</h3>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              App managers
+            </dt>
+            <dd class="govuk-summary-list__value">
+              your.name@email.gov.uk
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> app managers</span></a>
+            </dd>
+          </div>
+        </dl>
+
+        <h3 class="govuk-heading-m govuk-!-padding-top-8">Sign in settings</h3>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Redirect URLs
+            </dt>
+            <dd class="govuk-summary-list__value">
+              https://civilservicejobs.service.gov.uk/callback
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> sign-in URL</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Sign out URL
+            </dt>
+            <dd class="govuk-summary-list__value">
+              civilservicejobs.service.gov.uk
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> sign out URL</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Show confirmation page
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> show confirmation
+                  page</span></a>
+            </dd>
+          </div>
+        </dl>
+
+
+    
+
+      </div>
+
+    </div>
+
+
+
+
+
+</div>
+</div>
+</main>
+</div>
+
+
+{% endblock %}

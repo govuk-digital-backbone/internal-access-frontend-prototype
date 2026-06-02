@@ -120,3 +120,56 @@
   flex-direction: column;
   flex: 1; 
 }
+
+// ==========================================================================
+// GOV.UK Publishing Components Extension: Secondary Navigation
+// ==========================================================================
+.gem-c-secondary-navigation {
+  display: block;
+  margin-top: govuk-spacing(3);
+  margin-bottom: govuk-spacing(6);
+  border-bottom: 1px solid $govuk-border-colour;
+}
+
+.gem-c-secondary-navigation__list {
+  @include govuk-font($size: 19);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gem-c-secondary-navigation__list-item {
+  margin-right: govuk-spacing(4);
+  margin-bottom: -1px; // Align active border line cleanly over the wrapper boundary
+}
+
+.gem-c-secondary-navigation__link {
+  @extend .govuk-link--no-visited-state; // Inherit the GOV.UK utility to suppress purple visited states
+  display: block;
+  padding: govuk-spacing(2) 0;
+  color: $govuk-link-colour;
+  text-decoration: none;
+  font-weight: regular;
+
+  &:hover {
+    color: $govuk-link-hover-colour;
+    text-decoration: none;
+    text-decoration-thickness: 3px;
+  }
+
+ // Active item underline block
+  &--current {
+    &, &:link, &:visited {
+      color: $govuk-text-colour !important; // Enforces standard text colour even if visited
+    }
+    border-bottom: 4px solid #1d70b8; // GOV.UK Brand Blue
+    padding-bottom: calc(#{govuk-spacing(2)} - 4px); //
+
+    &:hover {
+      color: $govuk-text-colour !important; // Keeps text dark on hover instead of turning bright blue
+      text-decoration: none; //
+    }
+  }
+}
